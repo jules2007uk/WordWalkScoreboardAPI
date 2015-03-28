@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title></title>
+	
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+	
+		
+		$(function () {			
+			// create CORS request
+			//makeCorsRequest();
+			
+			/*
+			var score = {ID :"1", PlayerScore:"88", PlayerID:"Jeff"};
+			$.ajax({
+				type: "POST",
+				data :JSON.stringify(score),
+				url: "http://localhost:55573/API/scores",
+				contentType: "application/json"
+			});
+			*/
+			
+		});
+		
+	
+		// Create the XHR object.
+		function createCORSRequest(method, url) {
+			var xhr = new XMLHttpRequest();
+			if ("withCredentials" in xhr) {
+				// XHR for Chrome/Firefox/Opera/Safari.
+				xhr.open(method, url, true);
+			} else if (typeof XDomainRequest != "undefined") {
+				// XDomainRequest for IE.
+				xhr = new XDomainRequest();
+				xhr.open(method, url);
+			} else {
+				// CORS not supported.
+				xhr = null;
+			}
+			return xhr;
+		}
+
+		// Make the actual CORS request.
+		function makeCorsRequest() {		  
+			var url = 'http://localhost:55573/API/scores/';
+			var xhr = createCORSRequest('GET', url);			
+
+			//var url = 'http://localhost:55573/API/scores?playerScore=56&playerId=Hendry';
+			//var xhr = createCORSRequest('POST', url);
+			
+			if (!xhr) {
+				alert('CORS not supported');
+			return;
+			}
+
+
+			// Response handlers.
+			xhr.onload = function() {
+				var text = xhr.responseText;
+				console.log(xhr);			
+			};
+
+			xhr.onerror = function() {
+				console.log('Woops, there was an error making the request.');
+			};
+
+			// send the request to the scoreboard API
+			xhr.send();
+		}
+	</script>
+	
+  </head>
+  <body>
+  
+  </body>
+</html>

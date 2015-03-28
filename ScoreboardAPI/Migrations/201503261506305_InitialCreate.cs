@@ -1,0 +1,27 @@
+namespace ScoreboardAPI.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class InitialCreate : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Scores",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        PlayerScore = c.Int(nullable: false),
+                        PlayerId = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+        }
+        
+        public override void Down()
+        {
+            DropTable("dbo.Scores");
+        }
+    }
+}

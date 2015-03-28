@@ -1,0 +1,1 @@
+C:\Users\julian.willing\Documents\Visual Studio 2013\Projects\ScoreboardAPI\ScoreboardAPI.Tests\obj\Debug\ScoreboardAPI.Tests.csprojResolveAssemblyReference.cache

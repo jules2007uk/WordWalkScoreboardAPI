@@ -13,6 +13,7 @@ namespace ScoreboardAPI.Models
         public int ID { get; set; }
         public int PlayerScore { get; set; }
         public string PlayerID { get; set; }
-
+        public string GameName { get; set; } = "";
+        public DateTime TimeStamp { get; set; }
     }
 }

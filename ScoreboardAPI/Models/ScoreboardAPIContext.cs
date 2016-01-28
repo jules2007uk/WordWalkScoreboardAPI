@@ -15,6 +15,8 @@ namespace ScoreboardAPI.Models
 
         public ScoreboardAPIContext() : base("name=ScoreboardAPIContext")
         {
+            // ensures that the DB structure get's updated if it has changed
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ScoreboardAPIContext, Migrations.Configuration>());
         }
 
         public DbSet<Score> Scores { get; set; }

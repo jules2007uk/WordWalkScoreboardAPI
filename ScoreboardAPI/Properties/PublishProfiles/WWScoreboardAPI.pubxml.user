@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\julian.willing\Desktop\deploy</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\julian.willing\Desktop\d</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
@@ -136,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2015 14:39:26</publishTime>
     </File>
     <File Include="bin/ScoreboardAPI.dll">
-      <publishTime>01/28/2016 18:03:52</publishTime>
+      <publishTime>02/01/2016 22:22:39</publishTime>
     </File>
     <File Include="bin/System.ComponentModel.DataAnnotations.dll">
       <publishTime>09/26/2012 04:16:08</publishTime>

@@ -45,6 +45,26 @@ namespace ScoreboardAPI.Controllers
             
         }
 
+        /// <summary>
+        /// GET api/Scores?gameName={gameName}&numberOfScores={numberOfScores}
+        /// </summary>
+        /// <param name="gameName">The name of the game for which to retrieve the high scores</param>
+        /// <param name="numberOfScores">The number of scores to return</param>
+        /// <returns></returns>
+        public List<Score> GetTopScores(string gameName, int numberOfScores)
+        {
+            List<Score> topScores = new List<Score>();
+
+            // get the top 'n' scores from the db for the game name supplied
+            topScores = db.Scores.Where(m => m.GameName == gameName).OrderByDescending(x => x.PlayerScore).ToList<Score>();
+
+            // use group by to only return distinct player scores
+            List<Score> distinctScores = topScores.GroupBy(x => x.PlayerScore).Select(g => g.First()).Take(numberOfScores).ToList<Score>();
+
+            // return the distinct scores
+            return distinctScores;
+        }
+
         //// GET api/Scores/5
         ///// <summary>
         ///// Gets the highest score from the leaderboard for the player id supplied
